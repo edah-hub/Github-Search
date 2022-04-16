@@ -9,6 +9,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReposComponent } from './components/repos/repos.component';
 import { ServicePageComponent } from './components/service-page/service-page.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ServicePageComponent } from './components/service-page/service-page.com
     ProfileComponent,
     FooterComponent,
     ReposComponent,
-    ServicePageComponent
+    ServicePageComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
