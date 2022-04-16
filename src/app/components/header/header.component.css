@@ -1,0 +1,18 @@
+.cont{
+ 
+    text-align: center;
+    color: wheat;
+    background-color: #091743;
+    padding: 30px;
+}
+
+
+
+/* .card-header {
+    background-color: rgb(101, 77, 77);
+} */
+
+button{
+    background-color: blueviolet;
+    padding-left: 1%;
+}
