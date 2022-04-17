@@ -7,11 +7,9 @@ import { MainFormComponent } from '../main-form/main-form.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public githubUserQuery:string | undefined;
+  
   constructor() { }
-  public searchUser(){
-    
-  }
+ 
 
   ngOnInit(): void {
   }

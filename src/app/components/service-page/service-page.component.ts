@@ -12,6 +12,12 @@ export class ServicePageComponent implements OnInit {
   constructor( private httpClient:HttpClient) {
    
    }
+   // method for user profile
+   public getProfile(searchQuery: any){
+     let dataURL = 'htts://api.github.com/users/users';
+   }
+
+    // method for user profile
 
   ngOnInit(): void {
   }

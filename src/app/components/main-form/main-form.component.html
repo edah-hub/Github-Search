@@ -1,1 +1,87 @@
-<p>main-form works!</p>
+<div class="container" mt-3>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+               <div class="card-header bg-secondary text-white">
+                   <h4>Github User Search</h4>
+               </div> 
+               <div class="card-body">
+                   <form #formInput="ngForm" class="form-inline" (submit)="searchUser">                   
+                    <div class="form-group">
+                     <input [(ngModel)]="githubUserQuery" type="search" class="form-control" placeholder="github user" size="40" p-4 name="username" id="username">
+                    </div>
+                    {{githubUserQuery}}
+                    <div>
+                     <input type="submit" value="search" class="btn btn-secondary btn-sm" p-3 (click)='getUsername()' (click)='getRepository()'>
+                    </div>
+                   </form>
+                   
+        
+                   
+               </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <br>
+            <div class="row">
+                <div class="col-md-3 avatar">
+                    <img [src]=user.avatar_url alt="" height="300px"  >
+                    
+                </div>
+                <div class="col-md-4">
+                <h2>Account Details</h2><hr>
+                    <p><span id="output">Username:</span>{{user.login}} </p><hr>
+                   <p><span id="output">Followers:</span>:{{user.followers}} </p><hr>
+                    <p><span id="output">Date created:</span>  {{user.created_at| date}}</p><hr>
+                    <p><span id="output">Total Repositories:</span>  {{user.public_repos}}</p>
+                    <p><a href="https://github.com/{{user.login}}" target="_blank"><button class="btn btn-primary" >Check Profile</button></a></p>
+                </div>
+                <div class="col-md-5">
+                    <br><br><br>
+                    <p><span id="output">Email:</span>{{user.email}} </p><hr>
+                    <p><span id="output">Location:</span>{{user.location}} </p><hr>
+                    <p><span id="output">Company:</span>{{user.company}} </p><hr>
+                    <p><span id="output">Lastly Updated:</span>{{user.updated_at|date}} </p><hr>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<hr>
+<div class="title">
+    <h2>
+        Repositories
+    </h2>
+</div>
+<div class="container" >
+    <div class="eachitem" *ngFor='let repo of repos'>
+        <div class="card">
+            <div class="card-header">
+                <h3>{{repo.name}}</h3>
+            </div>
+            <div class="card-body">
+                Created on:{{repo.created_at}}<br>
+                Number of Forks: {{repo.forks_count}}
+                <p>Details:
+                    {{repo.description}}
+                </p>
+
+            </div>
+            
+        </div>
+        <br><hr>
+    </div>
+ </div>
+
