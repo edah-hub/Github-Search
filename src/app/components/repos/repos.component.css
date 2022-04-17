@@ -1,0 +1,9 @@
+.repos  {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 1000px;
+    margin: 0 auto;
+}
+.card{
+    max-width: 250px;
+}
