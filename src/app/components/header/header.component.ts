@@ -9,6 +9,9 @@ import { MainFormComponent } from '../main-form/main-form.component';
 export class HeaderComponent implements OnInit {
   public githubUserQuery:string | undefined;
   constructor() { }
+  public searchUser(){
+    
+  }
 
   ngOnInit(): void {
   }

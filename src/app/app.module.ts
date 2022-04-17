@@ -9,6 +9,7 @@ import { MainFormComponent } from './components/main-form/main-form.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReposComponent } from './components/repos/repos.component';
+import {HttpClientModule} from '@angular/common/http';
 import { ServicePageComponent } from './components/service-page/service-page.component';
 import { DateCountPipe } from './date-count.pipe';
 
@@ -26,7 +27,8 @@ import { DateCountPipe } from './date-count.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
