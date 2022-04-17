@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-// import { ServiceService } from '../servicepage/service.service';
+// import { servicepage } from '../servicepage/service.service';
 // import { Search } from '../search';
 // import { MainFormComponent } from '../main-form/main-form.component';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  constructor() {}
+  searchUser() {}
 
-  constructor() { }
-  searchUser(){
-
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

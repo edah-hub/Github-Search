@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  gitHubApi:'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'
 };

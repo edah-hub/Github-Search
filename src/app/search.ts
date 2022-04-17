@@ -1,6 +1,6 @@
 export class Search {
     constructor( 
-        public uname:string,
+        public username:string,
                 public description:string,
                  public dayJoined:string
          

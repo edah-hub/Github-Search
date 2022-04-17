@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -8,16 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-page.component.css']
 })
 export class ServicePageComponent implements OnInit {
+  Http: any;
 
   constructor( private httpClient:HttpClient) {
    
    }
-   // method for user profile
-   public getProfile(searchQuery: any){
-     let dataURL = 'htts://api.github.com/users/users';
-   }
+   getUser(username:any){
+    return this.Http.get("https://api.github.com/users/"+   username +"?access_token=" + environment.gitHubApi)
+    .pipe(((response: any) => response));
+  } 
+  getRepos(repoName:any){
+    return this.Http.get("https://api.github.com/users/"+ repoName +"/repos?access_token=" + environment.gitHubApi)
+    .pipe(((response: any) => response));
 
-    // method for user profile
+  }
 
   ngOnInit(): void {
   }
