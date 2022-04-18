@@ -13,7 +13,7 @@
 ## Setup/Installation Requirements
 To run this application in your system, you should have the following requirements in your local machine.
 * Have installed angular in your computer.
-* Have Instaled git as your version controll tool.
+* Have Installed git as your version controll tool.
 * Have Node installed in your system.
 * Have npm Installed.
 ### If the above conditions are met, kindly follow the following procedure:
