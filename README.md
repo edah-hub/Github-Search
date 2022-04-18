@@ -26,7 +26,7 @@ git clone https://github.com/edah-hub/GithubSearch
 ```
 $ cd GithubSearch
 ```
-* Finnaly, open the project with your preffered code editor ```(code .)``` for Visual studio or ```(atom . )``` for atom
+* Finally, open the project with your preffered code editor ```(code .)``` for Visual studio or ```(atom . )``` for atom
 
 ## Development server
 
