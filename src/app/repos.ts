@@ -1,5 +1,5 @@
 export class Repos {
-    constructor( public repoName:string, public repoForks:string, public createdDate:Date){
+    constructor( public repoName:string, public repoForks:number, public createdDate:Date){
 
     }
 }

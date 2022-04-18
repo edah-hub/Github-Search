@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { servicepage } from '../servicepage/service.service';
-// import { Search } from '../search';
-// import { MainFormComponent } from '../main-form/main-form.component';
+import { Search } from 'src/app/search';
+import { MainFormComponent } from '../main-form/main-form.component';
 
 @Component({
   selector: 'app-profile',

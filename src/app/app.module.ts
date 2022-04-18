@@ -10,7 +10,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReposComponent } from './components/repos/repos.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ServicePageComponent } from './components/service-page/service-page.component';
 import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { DateCountPipe } from './date-count.pipe';
     ProfileComponent,
     FooterComponent,
     ReposComponent,
-    ServicePageComponent,
     DateCountPipe
   ],
   imports: [

@@ -5,12 +5,12 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class servicepage {
+export class serviceserviceComponent {
   constructor(private Http: HttpClient) {}
-  getUser(unamer: any) {
+  getUser(username: any) {
     return this.Http.get(
       'https://api.github.com/users/' +
-        unamer +
+        username +
         '?access_token=' +
         environment.gitHubApi
     ).pipe((response: any) => response);

@@ -8,27 +8,24 @@
                <div class="card-body">
                    <form #formInput="ngForm" class="form-inline" (submit)="searchUser" id="form">                   
                     <div class="form-group">
-                     <input [(ngModel)]="githubUserQuery" type="search" class="form-control" placeholder="github user" size="40" p-4 name="username" id="username">
+                     <input [(ngModel)]="username" (keyup)='getUsername()' type="search" class="form-control" placeholder="github user" size="40" p-4 name="username" id="username">
                     </div>
                     <div>
                      <input type="submit" value="search" class="btn btn-secondary btn-sm" p-3 (click)='getUsername()' (click)='getRepository()'>
                     </div>
                    </form>                 
-        
-                   
-               </div>
+                </div>
             </div>
         </div>
 
-        
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <!-- <div class="col-md-8"> -->
             <br>
-            <div class="row">
+            <!-- <div class="row"> -->
                 <div class="col-md-3 avatar">
                     <img [src]=user.avatar_url alt="" height="300px"  >
                     
@@ -37,7 +34,7 @@
                 <h2>Account Details</h2><hr>
                     <p><span id="output">Username:</span>{{user.login}} </p><hr>
                    <p><span id="output">Followers:</span>:{{user.followers}} </p><hr>
-                    <p><span id="output">Date created:</span>  {{user.created_at| date}}</p><hr>
+                    <p><span id="output">Date created:</span>  {{user.created_at|date}}</p><hr>
                     <p><span id="output">Total Repositories:</span>  {{user.public_repos}}</p>
                     <p><a href="https://github.com/{{user.login}}" target="_blank"><button class="btn btn-primary" >Check Profile</button></a></p>
                 </div>
@@ -49,8 +46,8 @@
                     <p><span id="output">Last Updated on:</span>{{user.updated_at|date}} </p><hr>
 
                 </div>
-            </div>
-        </div>
+            <!-- </div> -->
+        <!-- </div> -->
         
     </div>
     
