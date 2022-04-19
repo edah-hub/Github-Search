@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { serviceserviceComponent } from 'src/app/service.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ServiceService } from 'src/app/service.service';
+import { User } from 'src/app/user';
+
 
 @Component({
   selector: 'app-main-form',
@@ -7,28 +10,37 @@ import { serviceserviceComponent } from 'src/app/service.service';
   styleUrls: ['./main-form.component.css'],
 })
 export class MainFormComponent implements OnInit {
-  public githubUserQuery: string | undefined;
+  // public githubUserQuery: string | undefined;
 
-  username: any;
-  user: any;
+  username: string;
+  user: User;
+  // serviceservice: ServiceService;
   repos: any;
-  serviceservice: any;
+  @ViewChild('form')
+  searchForm :any = NgForm;
+  searchRepoForm!: NgForm;
+  repositories: any;
+
+  constructor(private myService:ServiceService) {}
+
+
   getUsername() {
-    this.serviceservice.getUser(this.username).subscribe((profile: any) => {
-      console.log(profile);
-      return (this.user = profile);
-    });
-  }
-  getRepository() {
-    this.serviceservice.getRepos(this.username).subscribe((data: any) => {
-      console.log(data);
-      return (this.repos = data);
-    });
-  }
+    this.username = this.searchForm.value.search;
+   this.myService.getUserDataApi(this.username).then(
+     (response) => {
+       this.user = this.myService.userProfile;
+      //  this.DetailContainer = true;
 
-  constructor() {}
+     },
+     (error) => {
+       console.log(error);
+      //  this.Error = true;
+     }
+   );
 
-  public searchUser() {}
+ 
+}
 
-  ngOnInit(): void {}
+
+ngOnInit(): void {}
 }

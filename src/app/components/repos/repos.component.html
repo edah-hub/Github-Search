@@ -1,17 +1,55 @@
-    <div class="title">
-        <h3>Repositories associates with Your Account:</h3>
-        <!-- Loop with github repositories -->
-            <div class="repos">
-                <div class="card">
-                    <div class="card-title">
-                        <!-- Repo Name -->
-                        
-                    </div>
-                    <div class="card-body">
-                        <!-- Repo description -->
-                    </div>
+<div class="container">
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <!-- <form (ngSubmit)="getRepos()" id="search-form" #form="ngForm" class="d-flex">
+                <input class="form-control me-2" type="search" ngModel name="search" #search="ngModel"
+                    placeholder="GitHub UserName" aria-label="Search">
+                <p class="text-danger error-block" *ngIf="!search.valid && search.touched"><small>Fill in field!</small>
+                </p>
+                <button class="btn btn-outline-success" type="submit" [disabled]="!form.valid">Search</button>
+            </form> -->
+            <form (submit)="getUserName()" >
+             <label for="name">username</label><br>
+             <input type="text" placeholder="username" [formControl]="name">
+             <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="row my-repository" >
+        <div class="col-md-12 text-center">
+            <br>
+            <h2>Repositories Found for: {{username}}</h2>
+            <hr>
+        </div>
+        <div class="col-md-4 mr-3 ml-3 mt-3" *ngFor="let repo of repos; let i=index" id="card-content">
+            <div class="row" id="row-1">
+                <div class="col-md-4" id="giticon">
+                    <!-- <img src="assets/GitHub-Emblem.png"> -->
+                    <!-- <i class="fa fa-github" aria-hidden="true"></i> -->
+                </div>
+                <div class="col-md-8">
+                    <h4 class="card-title heading">{{repo.name}}</h4>
+                    <p class="card-text">{{repo.description}}</p>
+                    <p class="card-text"><strong>Created on: <span
+                                class="badge rounded-pill bg-info text-dark">{{repo.created_at |
+                                date}}</span></strong></p>
                 </div>
             </div>
+            <div class="card-footer">
+                <a href="{{repo.html_url}}" target="_blank" class="card-link color-primary"><i
+                        class="fa fa-eye" aria-hidden="true"></i>View repo</a>
+            </div>
+        </div>
     </div>
-
-    <!-- <app-router></app-router> -->
+    <!-- <div class="row" *ngIf="!displayRepository && displayErrorMessage">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="alert alert-danger" role="alert">No repositories found for {{searchText}}</div>
+            </div>
+        </div>
+    </div> -->
+</div>
+<app-footer></app-footer>

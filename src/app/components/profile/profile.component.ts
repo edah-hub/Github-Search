@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Search } from 'src/app/search';
+import { User } from 'src/app/user';
 import { MainFormComponent } from '../main-form/main-form.component';
 
 @Component({
